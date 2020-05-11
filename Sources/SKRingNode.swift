@@ -25,7 +25,7 @@
 import SpriteKit
 import SKTUtils
 
-class SKRingNode: SKNode {
+public class SKRingNode: SKNode {
   private(set) var diameter: CGFloat
   private(set) var thickness: CGFloat // thickness is decimal percentage of radius, 0...1
   
@@ -94,7 +94,7 @@ extension SKRingNode {
   }
 }
 
-class SKNestedRingNode: SKNode {
+public class SKNestedRingNode: SKNode {
   var rings: [SKRingNode] {
     return children.map {
       $0 as! SKRingNode
@@ -123,7 +123,7 @@ class SKNestedRingNode: SKNode {
   }
 }
 
-class SKTRingColorEffect: SKTEffect {
+public class SKTRingColorEffect: SKTEffect {
   var startColor: SKColor?
   let endColor: SKColor
   
@@ -133,7 +133,7 @@ class SKTRingColorEffect: SKTEffect {
     super.init(node: node, duration: duration)
   }
   
-  override func update(_ t: CGFloat) {
+    public override func update(_ t: CGFloat) {
     if startColor == nil {
       // purposefully not set until now to get current value during action sequence
       startColor = (node as! SKRingNode).color
@@ -143,7 +143,7 @@ class SKTRingColorEffect: SKTEffect {
   }
 }
 
-class SKTRingValueEffect: SKTEffect {
+public class SKTRingValueEffect: SKTEffect {
   var arcStart: CGFloat?
   var arcEnd: CGFloat
   
@@ -153,7 +153,7 @@ class SKTRingValueEffect: SKTEffect {
     super.init(node: node, duration: duration)
   }
   
-  override func update(_ t: CGFloat) {
+    public override func update(_ t: CGFloat) {
     if arcStart == nil {
       // purposefully not set until now to get current value during action sequence
       arcStart = (node as! SKRingNode).arcEnd
