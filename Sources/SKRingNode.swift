@@ -44,7 +44,7 @@ public class SKRingNode: SKNode {
   private var foregroundShape = SKShapeNode()
   private var backgroundShape = SKShapeNode()
   
-  init(diameter: CGFloat, thickness: CGFloat = 0.2) {
+  public init(diameter: CGFloat, thickness: CGFloat = 0.2) {
     self.diameter = diameter
     self.thickness = thickness
     
@@ -103,7 +103,7 @@ public class SKNestedRingNode: SKNode {
   
   // `thickness` is the width of each ring. Use a decimal percentage of the radius, 0...1
   // `spacing` is the separation between rings. Use a decimal percentage of the thickness, 0...1
-  init(diameter: CGFloat, count: Int, thickness: CGFloat = 0.2, spacing: CGFloat = 0.05) {
+  public init(diameter: CGFloat, count: Int, thickness: CGFloat = 0.2, spacing: CGFloat = 0.05) {
     super.init()
     let outerRing = SKRingNode(diameter: diameter, thickness: thickness)
     addChild(outerRing)
@@ -127,7 +127,7 @@ public class SKTRingColorEffect: SKTEffect {
   var startColor: SKColor?
   let endColor: SKColor
   
-  init(for node: SKRingNode, from startColor: SKColor? = nil, to endColor: SKColor, duration: TimeInterval) {
+  public init(for node: SKRingNode, from startColor: SKColor? = nil, to endColor: SKColor, duration: TimeInterval) {
     self.startColor = startColor
     self.endColor = endColor
     super.init(node: node, duration: duration)
@@ -147,7 +147,7 @@ public class SKTRingValueEffect: SKTEffect {
   var arcStart: CGFloat?
   var arcEnd: CGFloat
   
-  init(for node: SKRingNode, from arcStart: CGFloat? = nil, to arcEnd: CGFloat, duration: TimeInterval) {
+  public init(for node: SKRingNode, from arcStart: CGFloat? = nil, to arcEnd: CGFloat, duration: TimeInterval) {
     self.arcStart = arcStart
     self.arcEnd = arcEnd
     super.init(node: node, duration: duration)
