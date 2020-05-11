@@ -13,10 +13,14 @@ let package = Package(
             name: "SKTRings",
             targets: ["SKTRings"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/Quantum2/SKTUtils.git", .branch("master"))
+    ],
     targets: [
         .target(
             name: "SKTRings",
-            path: "Sources")
+            dependencies: ["SKTUtils"],
+            path: "Sources"
+        )
     ]
 )

@@ -23,6 +23,7 @@
  */
 
 import SpriteKit
+import SKTUtils
 
 class SKRingNode: SKNode {
   private(set) var diameter: CGFloat
