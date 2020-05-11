@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "SKTRings",
+    platforms: [
+        .watchOS(.v3)
+    ],
     products: [
         .library(
             name: "SKTRings",
